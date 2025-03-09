@@ -14,20 +14,21 @@ from midst_models.single_table_TabDDPM.complex_pipeline import (
 )
 from midst_models.single_table_TabDDPM.pipeline_modules import load_multi_table
 
-# use with id format to train the model, trans and account id is the row index (this will be dropped later in data preprocessing)
-TRAIN_BASE_PATH = "./tabddpm_black_box/train/tabddpm_1" 
 
+# use with id format to train the model, trans and account id is the row index (this will be dropped later in data preprocessing)
 # prepare data from "trans_synthetic.csv" in "train_with_id.csv" format, save to "train.csv"
 def data_prepare(path):
-    TRAIN_DATA_PATH = os.path.join(TRAIN_BASE_PATH, "train.csv")
     SYN_DATA_PATH = os.path.join(path, "trans_synthetic.csv")
-    df1 = pd.read_csv(TRAIN_DATA_PATH)
-    df2 = pd.read_csv(SYN_DATA_PATH)
+    df = pd.read_csv(SYN_DATA_PATH)
 
-    df1.iloc[:, 2:] = df2
+    n = len(df)
+    seq = list(range(n))
+    # insert 2 id columns (values does not matter) to df
+    df.insert(0, "trans_id", seq)
+    df.insert(1, "account_id", seq)
 
     TRAIN_DATA_PATH = os.path.join(path, "train.csv")
-    df1.to_csv(TRAIN_DATA_PATH, index=False)
+    df.to_csv(TRAIN_DATA_PATH, index=False)
 
 # some json file needed
 TRANS_DEMO_PATH = "../midst_models/single_table_TabDDPM/configs/trans_demo.json"
