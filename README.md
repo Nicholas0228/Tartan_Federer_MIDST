@@ -12,6 +12,10 @@ This repository contains the code implementation from Tartan Federer's group for
   - `Multi_Table_Black_Box_MIA.ipynb`: Black-box MIA pipeline for the **ClavaDDPM** scenario.
   - `Single_Table_White_Box_MIA.ipynb`: White-box MIA pipeline for the **TabDDPM** scenario.
   - `Multi_Table_White_Box_MIA.ipynb`: White-box MIA pipeline for the **ClavaDDPM** scenario.
+  - `train_single_table_DM.py`: Shadow model training script for **TabDDPM**. (Note: it takes about 30 mins to train one model on A100 GPU)
+  - `train_multi_table_DM.py`: Shadow model training script for **ClavaDDPM**. (Note: it takes about 45 mins to train one model on A100 GPU)
+
+- **`Midst_Report.pdf`**: The white paper documenting our method.
 
 We do **not** implement attacks targeting **TabSyn**.
 
