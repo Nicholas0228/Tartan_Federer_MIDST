@@ -7,8 +7,10 @@ __pycache__/
 *$py.class
 
 MIA/__pycache__/
+MIA/__MACOSX
 MIA/tabddpm_black_box/
 MIA/tabddpm_white_box/
+*.pt
 MIA/clavaddpm_black_box/
 MIA/clavaddpm_white_box/
 *.zip
