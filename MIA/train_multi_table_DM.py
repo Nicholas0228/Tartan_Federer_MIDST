@@ -76,11 +76,19 @@ CONFIG_PATH = "../midst_models/multi_table_ClavaDDPM/configs/berka.json"
 # nums = list(range(51, 61)) + list(range(91, 101))
 
 # for train phase
-nums = list(range(1,31))
+# nums = list(range(1,31))
+
+nums = list(range(1,31)) + list(range(51, 61)) + list(range(91, 101)) + list(range(61, 71)) + list(range(101, 111))
+
 for i in nums:
+    if i in list(range(1,31)):
+        current_phase = 'train'
+    elif i in list(range(51, 61)) + list(range(91, 101)):
+        current_phase = 'dev'
+    else:
+        current_phase = 'final'
     
-    # change model phase "train/dev/final" and corresponding numbers to train each model in their folder
-    MODEL_PATH = "./clavaddpm_black_box/train/clavaddpm_" + str(i)
+    MODEL_PATH = f"./clavaddpm_black_box/{current_phase}/clavaddpm_" + str(i)
     print(MODEL_PATH)
 
     configs, save_dir = load_configs(CONFIG_PATH)
