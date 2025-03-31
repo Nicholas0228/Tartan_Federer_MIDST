@@ -2,6 +2,9 @@
 
 This repository contains the code implementation from Tartan Federer's group for the MIDST Challenge. Most of the code is built upon the official challenge repository: [MIDSTModels](https://github.com/VectorInstitute/MIDSTModels).
 
+**Group member:** 
+[Xiaoyu (Nicholas) Wu](https://nicholas0228.github.io/), [Yifei Pang](https://2020pyfcrawl.github.io/), [Terrance Liu](https://terranceliu.github.io/), [Steven Wu](https://zstevenwu.com/).
+
 ## Repository Structure
 
 - **`midst_models`**: This directory closely follows the original implementation, with additional functions added to each model to support loss value extraction via hijection.
@@ -15,7 +18,7 @@ This repository contains the code implementation from Tartan Federer's group for
   - `train_single_table_DM.py`: Shadow model training script for **TabDDPM**. (Note: it takes about 30 mins to train one model on A100 GPU)
   - `train_multi_table_DM.py`: Shadow model training script for **ClavaDDPM**. (Note: it takes about 45 mins to train one model on A100 GPU)
 
-- **`Midst_Report.pdf`**: The white paper documenting our method.
+- White paper: **Winning the MIDST Challenge: New Membership Inference Attacks on Diffusion Models for Tabular Data Synthesis** https://arxiv.org/abs/2503.12008
 
 We do **not** implement attacks targeting **TabSyn**.
 
